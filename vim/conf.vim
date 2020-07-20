@@ -1,7 +1,3 @@
-"example to set path
-"set runtimepath^=~/Dropbox/vim
-"source ~/Dropbox/vim/vimrc.vim
-
 syntax on
 
 set backspace=indent,eol,start
@@ -29,6 +25,7 @@ autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
 
 set colorcolumn=80
 
+"set shift tab detab within insert mode 
 exe 'set t_kB=' . nr2char(27) . '[Z'
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
@@ -52,7 +49,7 @@ Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Yggdroot/indentLine'
 Plug 'gruvbox-community/gruvbox'
-
+Plug 'itchyny/lightline.vim'
 Plug 'vim-utils/vim-man'
 Plug 'kien/ctrlp.vim'
 Plug 'lyuts/vim-rtags'
@@ -83,6 +80,7 @@ endif
 let loaded_matchparen = 1
 let mapleader = " "
 
+" set leader shortcuts
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
@@ -101,3 +99,16 @@ let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 let g:plug_window = 'noautocmd vertical topleft new'
 
+
+set laststatus=2
+set noshowmode
+set timeoutlen=25
+
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'filetype', ] ]
+      \ },
+      \ }
