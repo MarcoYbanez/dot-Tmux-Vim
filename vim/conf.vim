@@ -102,7 +102,6 @@ let g:plug_window = 'noautocmd vertical topleft new'
 
 set laststatus=2
 set noshowmode
-set timeoutlen=25
 
 let g:lightline = {
       \ 'colorscheme': 'powerline',
